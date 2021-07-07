@@ -6,5 +6,14 @@ en el cuadro de texto "RESULTADO".*/
 function mostrarAumento()
 {
 
-	alert("ok");
+	let sueldo;
+	
+	let nuevoSueldo;
+
+	sueldo = parseFloat(document.getElementById("txtIdSueldo").value);
+
+	nuevoSueldo = sueldo*1.1;
+
+	document.getElementById("txtIdResultado").value = nuevoSueldo;
+
 }
