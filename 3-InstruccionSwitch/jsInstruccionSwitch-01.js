@@ -1,9 +1,40 @@
 function mostrar()
 {
-	//tomo el mes
-	var mesDelAño =txtIdMes.value;
-	alert(mesDelAño);
+let mes;
 
+mes = document.getElementById("txtIdMes").value;
 
-
-}//FIN DE LA FUNCIÓN
+switch(mes)
+{
+	case "Enero":
+		alert("Que comiences bien el año");
+		break;
+	case "Marzo":
+		alert("a clases!¡!");
+		break;
+	case "Julio":
+		alert("Se vienen las vacaciones");
+		break;
+	case "Diciembre":
+		alert("Felices fiestas");
+		break;
+}
+/*
+if(mes=="Enero")
+{
+	alert("Que comiences bien el año");
+}
+else if(mes=="Marzo")
+{
+	alert("a clases!¡!");
+}
+else if(mes=="Julio")
+{
+	alert("Se vienen las vacaciones");
+}
+else if(mes=="Diciembre")
+{
+	alert("Felices fiestas");
+}
+*/
+}//FIN DE LA FUNCIÓN*/
