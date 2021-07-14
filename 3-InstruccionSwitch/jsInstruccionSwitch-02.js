@@ -20,7 +20,7 @@ function mostrar()
 		case "Agosto":	
 			alert("Abrigate que hace frio.");
 			break;
-		Default 
+		default: 
 			alert("Ya pasamos el frio, ahora calor!!!.");					
 	}
 
