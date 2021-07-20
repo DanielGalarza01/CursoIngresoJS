@@ -10,7 +10,87 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  */
 function CalcularPrecio () 
 {
- 	let precio;
+    let cantidad;
+    let marca;
+    let descuento;
+    let porcDesc;
+    let precioDescuento;
+    let precio;
+    let importeTotal;
+    let IIBB;
+
+    cantidad = parseInt(document.getElementById("txtIdCantidad").value);
+    marca = document.getElementById("Marca").value;
+    precio = 35;
+
+    switch(cantidad)
+    {
+        case 1:
+        case 2:
+            porcDesc= 0;
+            break;
+        case 3:
+            if(marca == "ArgentinaLuz")
+            {
+                porcDesc= .15;
+            }
+            else if(marca == "FelipeLamparas")
+            {
+                porcDesc = .10;
+            }
+            else
+            {
+                porcDesc = .05;
+            }
+            break;   
+        case 4:
+            if(marca == "ArgentinaLuz" || marca == "FelipeLamparas")
+            {
+                porcDesc = .25;
+            }
+            else
+            {
+                porcDesc = .20;
+            }
+            break;
+        case 5:
+            if(marca == "ArgentinaLuz")
+            {
+                porcDesc = .40;   
+            }
+            else
+            {
+                porcDesc = .30;
+            }
+            break;
+        default:
+            {
+                porcDesc = .50;
+                break;
+            }
+    }
+
+    descuento = precio * porcDesc;
+    precioDescuento = precio - descuento;
+    document.getElementById("txtIdprecioDescuento").value = precioDescuento;
+
+    importeTotal = cantidad * precioDescuento;
+
+    if( importeTotal > 120)
+        {
+            IIBB = importeTotal * 0.1;
+            importeTotal = importeTotal + IIBB;
+            alert("Importe total $"+ importeTotal+". Usted pagó de IIBB $"+IIBB);
+        }
+        else
+        {
+            alert("ImporteTotal $"+importeTotal);
+        }
+    
+    
+
+}
+    /*let precio;
     let cantidad;
     let marca;
     let descuento;
@@ -20,7 +100,7 @@ function CalcularPrecio ()
 
     precio = 35;
     cantidad = parseInt(document.getElementById("txtIdCantidad").value);
-    marca = document.getElementById("Marca").value;
+    marca = document.getElementById("Marca").val;ue
 
     switch(cantidad)
     {
@@ -73,5 +153,5 @@ function CalcularPrecio ()
         impuesto = ingresosBrutos - precioFinal;
         alert("Usted pagó $"+impuesto+"de IIBB");  
     }
-    
-}
+    */
+//}
