@@ -6,7 +6,7 @@ function mostrar()
 
 	clave = prompt("Ingrese la clave.");
 
-	while(clave!=utn750)//cuando el dato sea invalido hacce true la condición.
+	while(clave!= "utn750") //cuando el dato sea invalido hacce true la condición.
 	{
 		clave = prompt("Clave invalida, reingrese clave");
 	}
