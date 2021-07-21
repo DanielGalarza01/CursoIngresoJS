@@ -5,6 +5,7 @@ e informar la suma acumulada y el promedio.
 function mostrar()
 {
 
+
 	let contador;
 	let acumulador;
 	let respuesta;
@@ -43,5 +44,6 @@ function mostrar()
 	document.getElementById("txtIdSuma").value = acumulador;
 
 	document.getElementById("txtIdPromedio").value = acumulador/contador;*/
+
 
 }//FIN DE LA FUNCIÓN
