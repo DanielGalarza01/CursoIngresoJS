@@ -1,6 +1,4 @@
 
-//Hola Dany.
-
 function mostrar()
 {
     let numero;
