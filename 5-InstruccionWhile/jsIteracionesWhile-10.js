@@ -16,33 +16,46 @@ function mostrar()
 	let numero;
 	let acumuladorPositivos = 0;
 	let acumuladorNegativos = 0;
-	let acumuladorCeros = 0;
 	let cantPos = 0;
 	let cantNeg = 0;
 	let cantCeros = 0;
+	let cantPar = 0;
+	let promPos;
+	let promNeg;
+	let diferencia;
 	do
 	{
 		numero = parseInt(prompt("Ingrese un numero"));
 		
 		if(numero>0)
 		{
+			if(numero%2==0)
+			{
+				cantPar++;
+			}
 			acumuladorPositivos += numero;
 			cantPos++;
 		}
 		else if(numero<0)
 		{
+			if(numero%2==0)
+			{
+				cantPar++;
+			}
 			acumuladorNegativos += numero;
 			cantNeg++			
 		}
 		else
 		{
-			acumuladorCeros += numero;
 			cantCeros++;
 		}
 		respuesta = prompt("Desea continuar? s/n");
 	}while(respuesta == 's');
-	
 
-	alert("La suma de negativos es: "+acumuladorNegativos+". La suma de positivos es: "+acumuladorPositivos+". La cantidad de negativos es: "+cantNeg+". La cantidad de positivos es: "+cantPos+". a cantidad de ceros es "+cantCeros+".");
+	promPos = acumuladorPositivos / cantPos;
+	promNeg = acumuladorNegativos / cantNeg;
+	diferencia = acumuladorPositivos-acumuladorNegativos;
+
+	alert("La suma de negativos es: "+acumuladorNegativos+". La suma de positivos es: "+acumuladorPositivos+". La cantidad de negativos es: "+cantNeg+". La cantidad de positivos es: "+cantPos+". a cantidad de ceros es "+cantCeros+". La cantidad de números pares es: "+cantPar+". El promedio de los positivos es: "+promPos+". El promedio de los negativos es: "+promNeg+". Y la diferencia entre negativos y positivos es: "+diferencia);
 
 }//FIN DE LA      
