@@ -23,8 +23,6 @@ function mostrar()
 	let promPos = 0;
 	let promNeg = 0;
 	let diferencia;
-	let flagPos = 0;
-	let flagNeg = 0;
 
 	do
 	{
@@ -39,13 +37,11 @@ function mostrar()
 		{			
 			acumuladorPositivos += numero;
 			cantPos++;
-			flagPos = 1;
 		}
 		else if(numero<0)
 		{			
 			acumuladorNegativos += numero;
-			cantNeg++;
-			flagNeg = 1;			
+			cantNeg++;			
 		}
 		else
 		{
@@ -57,21 +53,26 @@ function mostrar()
 			}
 		respuesta = prompt("Desea continuar? s/n").toLowerCase();
 	}while(respuesta == 's');
-	if(flagPos = 1)
-	promPos = acumuladorPositivos / cantPos;
-	if(flagNeg = 1)
-	promNeg = acumuladorNegativos / cantNeg;
-	
+
+
+	if(cantPos > 0)
+	{
+		promPos = acumuladorPositivos / cantPos;
+	}
+	if(cantNeg > 0)
+	{
+		promNeg = acumuladorNegativos / cantNeg;
+	}
 	diferencia = cantPos-cantNeg;
 
-	console.log("La suma de negativos es: "+acumuladorNegativos+".");
-	console.log("La suma de positivos es: "+acumuladorPositivos+".");
-	console.log("La cantidad de negativos es: "+cantNeg+".");
-	console.log("La cantidad de positivos es: "+cantPos+".");
-	console.log("La cantidad de ceros es "+cantCeros+".");
-	console.log("La cantidad de números pares es: "+cantPar+".");
-	console.log("El promedio de los positivos es: "+promPos+".");
-	console.log("El promedio de los negativos es: "+promNeg+".");
-	console.log("La diferencia entre negativos y positivos es: "+diferencia".");
+	alert(" 1- La suma de negativos es: "+acumuladorNegativos+"."+
+	"\n 2.- La suma de positivos es: "+acumuladorPositivos+"."+
+	"\n 3.- La cantidad de negativos es: "+cantNeg+"."+
+	"\n 4.- La cantidad de positivos es: "+cantPos+"."+
+	"\n 5.- La cantidad de ceros es "+cantCeros+"."+
+	"\n 6.- La cantidad de números pares es: "+cantPar+"."+
+	"\n 7.- El promedio de los positivos es: "+promPos+"."+
+	"\n 8.- El promedio de los negativos es: "+promNeg+"."+
+	"\n 9.- La diferencia entre negativos y positivos es: "+diferencia+".");
 
 }//FIN DE LA FUNCION.     
