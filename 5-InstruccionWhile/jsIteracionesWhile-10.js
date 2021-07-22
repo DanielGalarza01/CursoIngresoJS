@@ -20,42 +20,58 @@ function mostrar()
 	let cantNeg = 0;
 	let cantCeros = 0;
 	let cantPar = 0;
-	let promPos;
-	let promNeg;
+	let promPos = 0;
+	let promNeg = 0;
 	let diferencia;
+	let flagPos = 0;
+	let flagNeg = 0;
+
 	do
 	{
 		numero = parseInt(prompt("Ingrese un numero"));
+
+		while(isNaN(numero))
+        {
+            numero = parseInt(prompt("valor invalido, ingrese otro número"));
+        }
 		
 		if(numero>0)
-		{
-			if(numero%2==0)
-			{
-				cantPar++;
-			}
+		{			
 			acumuladorPositivos += numero;
 			cantPos++;
+			flagPos = 1;
 		}
 		else if(numero<0)
-		{
-			if(numero%2==0)
-			{
-				cantPar++;
-			}
+		{			
 			acumuladorNegativos += numero;
-			cantNeg++			
+			cantNeg++;
+			flagNeg = 1;			
 		}
 		else
 		{
 			cantCeros++;
 		}
-		respuesta = prompt("Desea continuar? s/n");
+		if(numero%2==0)
+			{
+				cantPar++;
+			}
+		respuesta = prompt("Desea continuar? s/n").toLowerCase();
 	}while(respuesta == 's');
-
+	if(flagPos = 1)
 	promPos = acumuladorPositivos / cantPos;
+	if(flagNeg = 1)
 	promNeg = acumuladorNegativos / cantNeg;
-	diferencia = acumuladorPositivos-acumuladorNegativos;
+	
+	diferencia = cantPos-cantNeg;
 
-	alert("La suma de negativos es: "+acumuladorNegativos+". La suma de positivos es: "+acumuladorPositivos+". La cantidad de negativos es: "+cantNeg+". La cantidad de positivos es: "+cantPos+". a cantidad de ceros es "+cantCeros+". La cantidad de números pares es: "+cantPar+". El promedio de los positivos es: "+promPos+". El promedio de los negativos es: "+promNeg+". Y la diferencia entre negativos y positivos es: "+diferencia);
+	console.log("La suma de negativos es: "+acumuladorNegativos+".");
+	console.log("La suma de positivos es: "+acumuladorPositivos+".");
+	console.log("La cantidad de negativos es: "+cantNeg+".");
+	console.log("La cantidad de positivos es: "+cantPos+".");
+	console.log("La cantidad de ceros es "+cantCeros+".");
+	console.log("La cantidad de números pares es: "+cantPar+".");
+	console.log("El promedio de los positivos es: "+promPos+".");
+	console.log("El promedio de los negativos es: "+promNeg+".");
+	console.log("La diferencia entre negativos y positivos es: "+diferencia".");
 
-}//FIN DE LA      
+}//FIN DE LA FUNCION.     
