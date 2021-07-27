@@ -73,6 +73,6 @@ function mostrar()
 	"\n 6.- La cantidad de números pares es: "+cantPar+"."+
 	"\n 7.- El promedio de los positivos es: "+promPos+"."+
 	"\n 8.- El promedio de los negativos es: "+promNeg+"."+
-	"\n 9.- La diferencia entre negativos y positivos es: "+diferencia+".");
+	"\n 9.- La diferencia entre positivos y negativos es: "+diferencia+".");
 
 }//FIN DE LA FUNCION.     
