@@ -28,7 +28,7 @@ c) (acumJ)ya lo tuve en cuenta en el punto b
  -------------------------------
  a) me fijo si el producto es de tipo alcohol y si es asi la primer vez que 
  ingresa alcohol guardo el precio en precio barato y las siguientes veces
- que ingrese un alcohol lo comparo con el precio del acohol barato y si es mas barato lo actualizo(tambien guardo cantidad y fabricante)
+ que ingrese un alcohol lo comparo con el precio del alcohol barato y si es mas barato lo actualizo(tambien guardo cantidad y fabricante)
  b) me fijo de que tipo es el producto y actualizo acumulador y contador de ese tipo
  c) si es de tipo jabon acumulo la cantidad(ya lo hice en el punto b)
 -------------------------------------------
@@ -88,6 +88,8 @@ function mostrar()
 					fabAlBarato = fabricante;
 					cantAlBarato = cantidad;
 					flagA = 0;
+                    acumuladorA += cantidad;
+                    contadorA++;
 				}
 			 }
 			 else if(tipo=="barbijo")
@@ -97,7 +99,8 @@ function mostrar()
 			 }	
 			 else
 			 {
-
+                acumuladorJ	= acumuladorJ + cantidad;
+				contadorJ++;
 			 }		 
             
     }
@@ -105,7 +108,18 @@ function mostrar()
 	if(acumuladorJ > acumuladorA  &&  acumuladorJ < acumuladorB)
 	{
 		maxUnidades = "jabón";
-		promedio = aacumuladorj / contaadorJ;
+		promedio = acumuladorj / contadorJ;
 	}
-	else if(acumulador >=)
+	else if(acumuladorA >= acumuladorB && acumuladorA > acumuladorJ)
+    {
+        maxUnidades = "Alcohol";
+		promedio = acumuladorA / contadorA;
+    }
+    else
+    {
+        maxUnidades = "Barbijo";
+		promedio = acumuladorB / contadorB;
+    }
+
+    
 }
