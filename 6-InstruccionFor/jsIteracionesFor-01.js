@@ -1,7 +1,7 @@
 function mostrar()
 {
-	for( let numero = 1 ; numero <= 10 ; numero++)
+	for(let num=1; num<=10 ; num++)
 	{
-		document.write(numero+"<br>");
+		document.write(num+"<br>");
 	}
 }

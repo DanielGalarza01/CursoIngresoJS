@@ -9,8 +9,8 @@ function mostrar()
 	}while(acumulador < 1000);
 	alert("El número es "+acumulador+" y se utilizó "+contador+ " repeticiones");*/
 
- for( let numero = 10 ; numero > 0 ; numero--)
-	 {
-		 document.write(numero+"<br>");
-	 }
+	for(let num=10; num>0; num--)
+	{
+		document.write(num+"<br>"); 
+	}
 }
