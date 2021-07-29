@@ -57,7 +57,7 @@ function mostrar()
         let maxUnidades;
         let promedio;
     
-        for(let i=0; i < 1; i++){
+        for(let i=0; i < 5; i++){
              tipo = prompt("Ingrese tipo (barbijo/alcohol/jabon): ").toLowerCase();
              while( !(tipo == "alcohol" || tipo == "barbijo" || tipo == "jabon")  ){
                  tipo = prompt("Tipo invalido. Reingrese tipo (barbijo/alcohol/jabon): ").toLowerCase();
@@ -82,15 +82,15 @@ function mostrar()
              }
 			 if(tipo=="alcohol")
 			 {
-				if(flagA1||	precio < precioMinAl)
+				if(flagA ||	precio < precioMinAl)
 				{
 					precioMinAl=  precio;
 					fabAlBarato = fabricante;
 					cantAlBarato = cantidad;
 					flagA = 0;
-                    acumuladorA += cantidad;
-                    contadorA++;
 				}
+                acumuladorA += cantidad;
+                contadorA++;
 			 }
 			 else if(tipo=="barbijo")
 			 {
@@ -120,6 +120,7 @@ function mostrar()
         maxUnidades = "Barbijo";
 		promedio = acumuladorB / contadorB;
     }
+    document.write("El alcohol más barato es del fabricante "+fabAlBarato+" y la cantidad es "+cantAlBarato+".<br>El tipo con más cantidad es "+maxUnidades+"y su promedio de compra es "+promedio+".<br>Y de jabones la cantidad es "+acumuladorJ);
 
     
 }
