@@ -1,5 +1,5 @@
 /*Realizar el algoritmo que permita ingresar los datos de una compra productos de la construccion, hasta que el cliente quiera:
-Tipo validad("arena";"cal";"cemento")
+Tipo validar("arena";"cal";"cemento")
 Cantidad de bolsas,
 Precio por bolsa (más de cero ),
 

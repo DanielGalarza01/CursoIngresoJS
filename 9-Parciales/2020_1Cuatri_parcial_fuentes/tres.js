@@ -18,37 +18,80 @@ function mostrar()
 	let contHombresfelices= 0;
 	let contJovatosFiebre= 0;
 	let contHSolteros= 0;
-	let acumEdadHSoltros= 0;
+	let acumEdadHSolteros= 0;
 	let flag=1;
 	let seguir;
-	let promedio = 0;
+	let promedio; 
 
 
 	do
 	{
 		nombre= prompt("Ingrese un nombre").toLowerCase();
-			while(nombre.length ==0)
+			while(nombre.length ==0 || !(isNaN(nombre)))
 			{
 				nombre= prompt("Error. Ingrese un nombre").toLowerCase();
 			}
 
-		sexo= prompt("Ingrese su sexo: m/f").toLowerCase();
-			while(sexo!= "F" && sexo != "m")
-			{
-				seguir= prompt("Desea seguir cargando datos? s/n");
-			}
-		temperatura = parseFloat(prompt("Ingrese temperatura (30/45): "));
-             while( !(temperatura >= 30 && temperatura <= 45)  )
-				{
-				temperatura = parseFloat(prompt("Error. Ingrese temperatura (30/45): "));
-				}
-
-		edad = parseInt(prompt("Ingrese edad max 1000: "));
+		edad = parseInt(prompt("Ingrese edad : "));
 			while( isNaN(edad) || edad < 1 )
 				{
 				edad = parseInt(prompt("Cantidad invalida. Reingrese edad: "));
 				}	
-				
-	seguir= prompt("")			
-	}while(seguir== "s");
+		
+		sexo= prompt("Ingrese su sexo: m/f").toLowerCase();
+			while(sexo!= "f" && sexo != "m")
+				{
+					sexo= prompt("Error. Ingrese su sexo: m/f").toLowerCase();
+				}
+
+		estado = prompt("Ingrese su estado civil: (soltero, casado o viudo)").toLowerCase();
+			while( estado!= "soltero" && estado!= "casado" && estado!= "viudo")
+				{
+					estado = prompt("Error. Ingrese su estado civil: (soltero, casado o viudo)").toLowerCase();
+				}
+
+		temperatura = parseFloat(prompt("Ingrese temperatura (30/45): "));
+			while( !(temperatura >= 30 && temperatura <= 45)  )
+				{
+					temperatura = parseFloat(prompt("Error. Ingrese temperatura (30/45): "));
+				}
+		
+		if(flag || temperatura > maxTemp)
+		{
+			maxTemp= temperatura;
+			nombreMaxTemp = nombre;
+			flag=0;
+		}
+		if( edad>=18 && estado == "viudo" )
+		{
+			contJovatosViudos++;
+		}
+		if( sexo == "m" )
+		{
+			if(estado!= "casado")
+			{
+				contHombresfelices++;
+			}
+		}
+		if( edad > 60 && temperatura > 38)
+		{
+			contJovatosFiebre++;
+		}
+		if( estado == "soltero")
+		{
+			acumEdadHSolteros+= edad;
+			contHSolteros++;
+		}
+		
+	seguir= prompt("Desea seguir cargando datos? : s/n");			
+	}while(seguir == "s");
+
+
+	promedio = acumEdadHSolteros / contHSolteros;
+
+document.write("a) El nombre de la persona con mas temperatura es "+nombreMaxTemp+"<br>");
+document.write("b) Los mayores de edad que estan viudos son "+ contJovatosViudos +"<br>");
+document.write("c) La cantidad de hombres que hay solteros o viudos es "+contHombresfelices+"<br>");
+document.write("d) La cantidad de personas de la tercera edad( mas de 60 años) que tienen mas de 38 de temperatura es "+contJovatosFiebre+"<br>");
+document.write("e) El promedio de edad entre los hombres solteros es "+promedio);
 }

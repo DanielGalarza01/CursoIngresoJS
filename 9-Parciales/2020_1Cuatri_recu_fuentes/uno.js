@@ -17,62 +17,92 @@ function mostrar()
 	let cantidad;
 	let marca;
 	let fabricante;
-	let fabricanteMaxJ;
-	let cantMaxJ;
+	let jabonMasCaro;
+	let cantJmasCaro = 0;
+	let fabJMasCaro;
+	let tipoMasUnid;
 	let promedio;
-	let acumuladorJ;
-	let acumuladorA;
-	let acumuladorB;
-	let contJ;
-	let contA;
-	let contB;
-	let flag = 1;
-	
-	for(let i=0 ; i<5 ; i++)
+	let acumJabon = 0;
+	let acumAlcohol = 0;
+	let acumBarbijos = 0;
+	let contJabon = 0;
+	let contAlcohol = 0;
+	let contBarbijos = 0;
+	let flag=1;
+
+	for(i=0 ; i<5 ; i++)
 	{
-		tipo = prompt("Ingrese un tipo (barbijo/alcohol/jabón)").toLowerCase();
-		while(tipo!="alcohol"&&tipo!="barbijo"&&tipo!="jabón")
+		tipo = prompt("Ingrese el tipo de producto").toLowerCase();
+		while( tipo != "barbijo" && tipo != "jabón" && tipo != "alcohol")
 		{
-				tipo= prompt("Valor invalido. Ingrese un tipo (barbijo/alcohol/jabón)").toLowerCase();
+			tipo = prompt("Error. Ingrese el tipo de producto").toLowerCase();
 		}
 
-		precio = parseInt(prompt("Ingrese el precio"));
-		while(precio<100 || precio>300)
+		precio = parseInt(prompt("Ingrese el precio del producto"));
+		while( precio < 100 || precio > 300)
 		{
-			precio = parseInt(prompt("Valor invalido. Ingrese el precio"));
+			precio = parseInt(prompt("Error. Ingrese el precio del producto"));
 		}
 
-		cantidad = parseInt(prompt("Ingrese la cantidad"));
-		while(cantidad<=0 || cantidad>1000)
+		cantidad = parseInt(prompt("Ingrese la cantidad del producto"));
+		while( cantidad < 1 || cantidad > 1000)
 		{
-			cantidad = parseInt(prompt("Valor invalido. Ingrese la cantidad"));
+			cantidad = parseInt(prompt("Error. Ingrese la cantidad del producto"));
 		}
 
-		marca = prompt("Ingrese la marca").toLocaleLowerCase();
-		while(marca.length==0)
+		marca = prompt("Ingrese la marca del producto").toLowerCase();
+		while( marca.length == 0 || !(isNaN(marca)))
 		{
-			marca = prompt("Por favor ingrese la marca").toLocaleLowerCase();
+			marca = prompt("Error. Ingrese la marca del producto").toLowerCase();
 		}
 
-		fabricante = prompt("Ingrese el fabricante").toLowerCase();
-		while(fabricante.length==0)
+		fabricante = prompt("Ingrese el fabricante del producto").toLowerCase();
+		while( fabricante.length == 0 || !(isNaN(fabricante)))
 		{
-			fabricante = prompt("Por favor ingrese el fabricante").toLowerCase();
+			fabricante = prompt("Error. Ingrese el fabricante del producto").toLowerCase();
 		}
-
-		switch(tipo)
+		//a) Del más caro de los jabones, la cantidad de unidades y el fabricante
+		if(tipo == "jabón")
 		{
-			case jabon:
-				if( flag || cantMaxJ < cantidad )
-				{
-					cantMaxJ = cantidad;
-					fabricanteMaxJ = fabricante
-					flag = 0;
-				}
-				acumuladorJ += cantidad;
-				contJ++;
+			if(flag || precio>jabonMasCaro)
+			{
+				jabonMasCaro = precio;
+				cantJmasCaro = cantidad;
+		 		fabJMasCaro = fabricante;
+				flag = 0;
+			}
+			acumJabon += cantidad;
+			contJabon++;
 		}
-		
+		else if(tipo == "barbijo")
+		{
+			acumBarbijos += cantidad;
+			contBarbijos++;
+		}
+		else
+		{
+			acumAlcohol += cantidad;
+			contAlcohol++;
+		}
 
 	}
+
+	if(acumAlcohol>acumBarbijos && acumAlcohol>acumJabon)
+		{
+			promedio = acumAlcohol / contAlcohol;
+			tipoMasUnid = "Alcohol";
+		}
+		else if(acumBarbijos>=acumAlcohol && acumBarbijos>acumJabon)
+		{
+			promedio = acumBarbijos / contBarbijos;
+			tipoMasUnid = "Barbijos";
+		}
+		else
+		{
+			promedio = acumJabon / acumJabon;
+			tipoMasUnid = "jabón";
+		}
+	document.write("a) Del más caro de los jabones, la cantidad de unidades es "+cantJmasCaro+" y el fabricante es "+fabJMasCaro+"<br>");
+	document.write("b) Del tipo de producto con más unidades en total de la compra, el promedio por compra es "+promedio+"<br>");
+	document.write("c) Se compraron en total "+acumBarbijos+" unidades de Barbijos.");
 }
