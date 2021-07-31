@@ -107,7 +107,7 @@ function mostrar()
 	document.write("c) Se compraron en total "+acumBarbijos+" unidades de Barbijos."); 
 	
 	
-	Luego de la campaña de vacunación “COVID19” se realizó un censo sobre la población para
+	/*Luego de la campaña de vacunación “COVID19” se realizó un censo sobre la población para
 obtener distintos datos estadísticos:
 Se ingresará hasta que usuario decida:
 Nombre.
