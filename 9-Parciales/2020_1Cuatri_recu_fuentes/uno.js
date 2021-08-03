@@ -9,7 +9,7 @@ a) Del más caro de los jabones, la cantidad de unidades y el fabricante
 b) Del tipo de producto con más unidades en total de la compra, el promedio por compra
 c) Cuántas unidades de Barbijos se compraron en total */
 
-/* 
+ 
 function mostrar()
 {
 	let tipo;
@@ -105,7 +105,7 @@ function mostrar()
 	document.write("a) Del más caro de los jabones, la cantidad de unidades es "+cantJmasCaro+" y el fabricante es "+fabJMasCaro+"<br>");
 	document.write("b) Del tipo de producto con más unidades en total de la compra, el promedio por compra es "+promedio+"<br>");
 	document.write("c) Se compraron en total "+acumBarbijos+" unidades de Barbijos."); 
-	
+}	//FIN DE LA FUNCIÓN.
 	
 	/*Luego de la campaña de vacunación “COVID19” se realizó un censo sobre la población para
 obtener distintos datos estadísticos:
@@ -127,7 +127,7 @@ f) Porcentaje de personas que se aplicaron Aztrazeneca
 g) Cual fue la vacuna mas aplicada
 h) Promedio de edad de las personas que se dieron cada vacuna
 i) Que porcentaje de personas de cada genero hay. Ej: 30% Femenino, 60% Masculino y 10% No */
-function mostrar()
+/* function mostrar()
 {
 let nombre;
 let edad;
@@ -306,4 +306,4 @@ document.write("h) El promedio de edad de las personas que se dieron cada vacuna
 document.write("i) Que porcentaje de personas de cada genero hay: "+porcGenFem+"% Femenino, "+porcGenMas+"% Masculino y "+porcGenNB+"% NB.<br>")
 
 }
-
+ */
