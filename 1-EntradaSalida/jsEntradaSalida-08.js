@@ -7,7 +7,7 @@ function SacarResto()
 {
 	let dividendo;
 	let divisor;
-	let dividir;
+	let resto;
 
 //levantos los datos de las cajas de textos.
 	dividendo = document.getElementById("txtIdNumeroDividendo").value;
